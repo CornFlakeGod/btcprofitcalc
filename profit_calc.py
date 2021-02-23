@@ -20,7 +20,7 @@ buyprice = float(input("How much (€) was 1 BTC worth when you purchased?\n"))
 buytax = input("How much (%%) was the tax when you purchased? (Default = %s %%)\n" % (defaulttax))
 if buytax=='':
 	buytax=defaulttax
-	
+
 btcamount =  (buyinvest * (1 - (buytax / 100))) / buyprice
 
 sellamount = input("How many bitcoins did you sell? (Default = all / %s btc)\n" % (btcamount))
@@ -35,15 +35,6 @@ selltax = input("How much (%%) was the tax when you purchased? (Default = %s %%)
 if selltax=='':
 	selltax=defaulttax
 
-sellaftertax = (sellamount * sellprice) * (1 - (selltax / 100))
+sellaftertax = (float(sellamount) * float(sellprice)) * (1 - (float(selltax) / 100))
 profit=sellaftertax-buyinvest
 print("You sold %s btc for %s €,\nafter a %s € investment,\nresulting in a profit of %s €." % (sellamount,sellaftertax,buyinvest,profit))
-
-
-
-
-
-
-
-
-
